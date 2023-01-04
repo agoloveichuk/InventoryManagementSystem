@@ -1,8 +1,9 @@
 ﻿using IMS.CoreBusiness;
+using IMS.UseCases.PluginInterfaces;
 
 namespace IMS.UseCases
 {
-    public class ViewInventoryByName : IInventoryRepository
+    public class ViewInventoryByName : IViewInventoryByName
     {
         private readonly IInventoryRepository inventoryRepository;
 
@@ -10,9 +11,9 @@ namespace IMS.UseCases
         {
             this.inventoryRepository = inventoryRepository;
         }
-        public async IEnumerable<Inventory> ExecuteAsync(string name)
+        public async Task<IEnumerable<Inventory>> ExecuteAsync(string name)
         {
-
+            return await this.inventoryRepository.GetInventoriesByName(name);
         }
     }
 }

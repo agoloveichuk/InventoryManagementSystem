@@ -1,4 +1,4 @@
-﻿namespace IMS.UseCases
+﻿namespace IMS.UseCases.PluginInterfaces
 {
     public interface IInventoryRepository
     {
